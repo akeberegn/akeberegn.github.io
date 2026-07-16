@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akoberegn | Vibe Coder & Trader</title>
+    <title>Akeberegn | Vibe Coder & Trader</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #050505; color: #d4af37; font-family: 'Inter', sans-serif; }
-        .card { background: #111; border: 1px solid #d4af37; border-radius: 15px; padding: 20px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        body { background: radial-gradient(circle at center, #0f172a, #020617); color: white; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gold-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+        .btn-gold { background: linear-gradient(90deg, #d4af37, #b8860b); color: #000; font-weight: bold; transition: transform 0.2s; }
+        .btn-gold:hover { transform: translateY(-3px); }
     </style>
 </head>
-<body class="p-4 md:p-10">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-10">
-            <h1 class="text-5xl font-bold text-white mb-2">Akoberegn</h1>
-            <p class="text-xl">Vibe Coder | Forex & Crypto Trader</p>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-3xl w-full glass p-8 md:p-12 rounded-3xl shadow-2xl text-center">
+        <!-- Profile -->
+        <div class="mb-8">
+            <h1 class="text-5xl font-bold mb-2 gold-glow">Akeberegn</h1>
+            <p class="text-amber-500 font-medium tracking-widest uppercase text-sm">Vibe Coder | Forex & Crypto Trader</p>
         </div>
-        <div class="card mb-6">
-            <h2 class="text-2xl font-bold text-white mb-4">✨ About Me</h2>
-            <p class="text-gray-300">I am a motivated learner and a dedicated trader. My journey combines the analytical precision of Forex and Crypto trading with the creative freedom of Vibe Coding. I am currently a student in the ETN Learn Vibe Coding 101 class.</p>
+
+        <!-- Bio -->
+        <div class="glass p-6 rounded-2xl mb-8">
+            <p class="text-gray-300 leading-relaxed">
+                I am an ambitious student at <b>ETN Learn</b>, mastering the art of Vibe Coding. I combine the discipline of a trader with the creativity of a developer to build impactful digital solutions.
+            </p>
         </div>
+
+        <!-- Psychology -->
+        <div class="glass p-6 rounded-2xl mb-8 border-l-4 border-amber-500 text-left">
+            <h2 class="text-xl font-bold mb-2 gold-glow">Trading Psychology</h2>
+            <p class="text-gray-300 mb-4 text-sm">Join me on my journey where I share insights, market discipline, and mindset lessons.</p>
+            <a href="https://t.me/Ak_Trades_Official" class="text-amber-400 hover:underline font-bold">@Ak_Trades_Official</a>
+        </div>
+
+        <!-- Socials -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="https://twitter.com/AkeEtn" target="_blank" class="card block text-center">
-                <span class="text-3xl block mb-2">🐦</span>
-                <span class="font-bold text-white">Twitter: @AkeEtn</span>
-            </a>
-            <a href="https://t.me/AK_Trades_Official" target="_blank" class="card block text-center">
-                <span class="text-3xl block mb-2">📈</span>
-                <span class="font-bold text-white">Trading Channel: @AK_Trades_Official</span>
-            </a>
+            <a href="https://t.me/Aki_GD" class="p-4 glass rounded-xl hover:bg-white/10 transition-all font-bold">✈️ Telegram: @Aki_GD</a>
+            <a href="https://twitter.com/AkeEtn" class="p-4 glass rounded-xl hover:bg-white/10 transition-all font-bold">🐦 Twitter: @AkeEtn</a>
         </div>
+
+        <p class="mt-10 text-xs text-gray-600">© 2026 Akeberegn | Vibe Coding Student</p>
     </div>
+
 </body>
 </html>
+          
