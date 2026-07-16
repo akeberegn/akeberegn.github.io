@@ -3,49 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akeberegn | Vibe Coder & Trader</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Akeberegn | Profile</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-        body { background: radial-gradient(circle at center, #0f172a, #020617); color: white; font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gold-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-        .btn-gold { background: linear-gradient(90deg, #d4af37, #b8860b); color: #000; font-weight: bold; transition: transform 0.2s; }
-        .btn-gold:hover { transform: translateY(-3px); }
+        :root {
+            --gold: #c5a059;
+            --dark: #0a0a0a;
+            --card-bg: #121212;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--gold);
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        h1 { color: var(--gold); text-align: center; margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; font-weight: bold; color: #aaa; margin-bottom: 2rem; }
+        
+        .divider { height: 1px; background: var(--gold); margin: 2rem 0; opacity: 0.3; }
+
+        .about-text { line-height: 1.6; margin-bottom: 2rem; }
+        
+        .grid { display: grid; gap: 1rem; }
+        .skill-item { 
+            padding: 1rem; 
+            background: #1a1a1a; 
+            border-left: 3px solid var(--gold);
+            border-radius: 4px;
+        }
+
+        .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+        .link-btn {
+            color: var(--gold);
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .link-btn:hover { background: var(--gold); color: #000; }
+        
+        .footer-quote { text-align: center; font-style: italic; margin-top: 3rem; color: var(--gold); }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body>
+    <div class="card">
+        <h1>Akeberegn</h1>
+        <p class="subtitle">Vibe Coding Student | Electrical Expert | Trader</p>
+        
+        <div class="divider"></div>
 
-    <div class="max-w-3xl w-full glass p-8 md:p-12 rounded-3xl shadow-2xl text-center">
-        <!-- Profile -->
-        <div class="mb-8">
-            <h1 class="text-5xl font-bold mb-2 gold-glow">Akeberegn</h1>
-            <p class="text-amber-500 font-medium tracking-widest uppercase text-sm">Vibe Coder | Forex & Crypto Trader</p>
+        <p class="about-text">
+            Based in Addis Ababa, I bridge the gap between physical craftsmanship and digital innovation. 
+            I use <b>AI coding</b> to automate workflows, build functional tools, and streamline my professional projects.
+        </p>
+
+        <div class="grid">
+            <div class="skill-item">⚡ <b>Electrical Engineering:</b> Specialist in commercial and residential systems.</div>
+            <div class="skill-item">💻 <b>Vibe Coding:</b> Dedicated to building problem-solving tools and web applications.</div>
+            <div class="skill-item">📈 <b>Trading:</b> Passionate about Forex & Crypto with a focus on psychology and discipline.</div>
         </div>
 
-        <!-- Bio -->
-        <div class="glass p-6 rounded-2xl mb-8">
-            <p class="text-gray-300 leading-relaxed">
-                I am an ambitious student at <b>ETN Learn</b>, mastering the art of Vibe Coding. I combine the discipline of a trader with the creativity of a developer to build impactful digital solutions.
-            </p>
+        <div class="links">
+            <a class="link-btn" href="https://t.me/Ak_Trades_Official">Telegram Channel</a>
+            <a class="link-btn" href="https://t.me/Aki_GD">Personal Telegram</a>
+            <a class="link-btn" href="https://x.com/AkeEtn">Twitter</a>
+            <a class="link-btn" href="mailto:akeberegnaweke@gmail.com">Email</a>
         </div>
 
-        <!-- Psychology -->
-        <div class="glass p-6 rounded-2xl mb-8 border-l-4 border-amber-500 text-left">
-            <h2 class="text-xl font-bold mb-2 gold-glow">Trading Psychology</h2>
-            <p class="text-gray-300 mb-4 text-sm">Join me on my journey where I share insights, market discipline, and mindset lessons.</p>
-            <a href="https://t.me/Ak_Trades_Official" class="text-amber-400 hover:underline font-bold">@Ak_Trades_Official</a>
-        </div>
-
-        <!-- Socials -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="https://t.me/Aki_GD" class="p-4 glass rounded-xl hover:bg-white/10 transition-all font-bold">✈️ Telegram: @Aki_GD</a>
-            <a href="https://twitter.com/AkeEtn" class="p-4 glass rounded-xl hover:bg-white/10 transition-all font-bold">🐦 Twitter: @AkeEtn</a>
-        </div>
-
-        <p class="mt-10 text-xs text-gray-600">© 2026 Akeberegn | Vibe Coding Student</p>
+        <p class="footer-quote">"Leveraging AI and code to solve complex problems and build efficient solutions."</p>
     </div>
-
 </body>
 </html>
-          
+    
