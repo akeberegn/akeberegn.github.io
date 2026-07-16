@@ -3,92 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akeberegn | Profile</title>
+    <title>Ak Tech | Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --gold: #c5a059;
-            --dark: #0a0a0a;
-            --card-bg: #121212;
-            --text-light: #e0e0e0;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--gold);
-            max-width: 700px;
-            width: 90%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        h1 { color: var(--gold); text-align: center; margin-bottom: 0.5rem; }
-        .subtitle { text-align: center; font-weight: bold; color: #aaa; margin-bottom: 2rem; }
-        
-        .divider { height: 1px; background: var(--gold); margin: 2rem 0; opacity: 0.3; }
-
-        .about-text { line-height: 1.6; margin-bottom: 2rem; }
-        
-        .grid { display: grid; gap: 1rem; }
-        .skill-item { 
-            padding: 1rem; 
-            background: #1a1a1a; 
-            border-left: 3px solid var(--gold);
-            border-radius: 4px;
-        }
-
-        .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
-        .link-btn {
-            color: var(--gold);
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--gold);
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .link-btn:hover { background: var(--gold); color: #000; }
-        
-        .footer-quote { text-align: center; font-style: italic; margin-top: 3rem; color: var(--gold); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { background-color: #050505; color: #e0e0e0; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(20px); border: 1px solid #333; }
+        .text-gold { color: #c5a059; }
+        .border-gold { border-color: #c5a059; }
+        .hover-gold:hover { border-color: #c5a059; transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
-<body>
-    <div class="card">
-        <h1>Akeberegn</h1>
-        <p class="subtitle">Vibe Coding Student | Electrical Expert | Trader</p>
+<body class="p-4 md:p-8 flex items-center justify-center min-h-screen">
+
+    <div class="max-w-3xl w-full glass-card p-6 md:p-12 rounded-3xl border border-neutral-800 shadow-2xl">
         
-        <div class="divider"></div>
-
-        <p class="about-text">
-            Based in Addis Ababa, I bridge the gap between physical craftsmanship and digital innovation. 
-            I use <b>AI coding</b> to automate workflows, build functional tools, and streamline my professional projects.
-        </p>
-
-        <div class="grid">
-            <div class="skill-item">⚡ <b>Electrical Engineering:</b> Specialist in commercial and residential systems.</div>
-            <div class="skill-item">💻 <b>Vibe Coding:</b> Dedicated to building problem-solving tools and web applications.</div>
-            <div class="skill-item">📈 <b>Trading:</b> Passionate about Forex & Crypto with a focus on psychology and discipline.</div>
+        <div class="w-full h-56 bg-neutral-900 rounded-2xl mb-8 overflow-hidden border border-neutral-700 relative">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200&h=400" alt="Professional workspace" class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 to-transparent"></div>
+            <div class="absolute bottom-4 left-6 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-black/50 backdrop-blur-md border border-gold flex items-center justify-center">
+                    <span class="text-lg font-black text-gold">AK</span>
+                </div>
+            </div>
         </div>
 
-        <div class="links">
-            <a class="link-btn" href="https://t.me/Ak_Trades_Official">Telegram Channel</a>
-            <a class="link-btn" href="https://t.me/Aki_GD">Personal Telegram</a>
-            <a class="link-btn" href="https://x.com/AkeEtn">Twitter</a>
-            <a class="link-btn" href="mailto:akeberegnaweke@gmail.com">Email</a>
+        <header class="text-left mb-10">
+            <h1 class="text-4xl font-extrabold text-gold tracking-tighter mb-2">Ak Tech</h1>
+            <p class="text-neutral-400 uppercase tracking-widest text-sm font-semibold">Vibe Coding Student | Electrical Expert | Trader</p>
+        </header>
+
+        <section class="text-left mb-12">
+            <p class="text-neutral-300 leading-relaxed max-w-2xl">
+                Based in Addis Ababa, I bridge the gap between physical craftsmanship and digital innovation. My daily life involves professional electrical work, but my vision is set on the future: using <strong>Vibe Coding</strong> to build functional tools that solve real-world problems in Ethiopia.
+            </p>
+            <p class="text-neutral-300 leading-relaxed max-w-2xl mt-4">
+                In the markets, I am a dedicated trader. Through my channel, I share deep insights into <strong>Trading Psychology</strong> and market discipline to help others grow. If you are interested in collaborating or following my journey, reach out to me below.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
+                <div class="text-gold text-xl mb-2">⚡</div>
+                <h3 class="font-bold text-white text-sm mb-1">Electrical</h3>
+                <p class="text-xs text-neutral-500">Commercial & Residential Systems.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
+                <div class="text-gold text-xl mb-2">💻</div>
+                <h3 class="font-bold text-white text-sm mb-1">Vibe Coding</h3>
+                <p class="text-xs text-neutral-500">Problem-solving for Ethiopia.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
+                <div class="text-gold text-xl mb-2">📈</div>
+                <h3 class="font-bold text-white text-sm mb-1">Trading</h3>
+                <p class="text-xs text-neutral-500">Psychology & Discipline.</p>
+            </div>
         </div>
 
-        <p class="footer-quote">"Leveraging AI and code to solve complex problems and build efficient solutions."</p>
+        <div class="flex flex-col gap-3">
+            <p class="text-neutral-500 text-xs mb-2">Connect with me on my platforms:</p>
+            <a href="https://t.me/Ak_Trades_Official" class="w-full py-3 bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-black rounded-xl transition text-center font-bold">Join My Trading Channel</a>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <a href="https://t.me/Aki_GD" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Telegram</a>
+                <a href="https://x.com/AkeEtn" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Twitter</a>
+                <a href="mailto:akeberegnaweke@gmail.com" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Email</a>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12">
+            <p class="text-gold text-sm font-light italic">"Building the future, one line of code and one connection at a time."</p>
+        </footer>
     </div>
 </body>
 </html>
-    
