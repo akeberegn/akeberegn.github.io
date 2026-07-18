@@ -3,76 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ak Tech | Professional Profile</title>
+    <title>Ak Tech | AI-Powered Developer & Vibe Coder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        body { background-color: #050505; color: #e0e0e0; font-family: 'Inter', sans-serif; }
-        .glass-card { background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(20px); border: 1px solid #333; }
-        .text-gold { color: #c5a059; }
-        .border-gold { border-color: #c5a059; }
-        .hover-gold:hover { border-color: #c5a059; transform: translateY(-5px); transition: 0.3s; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .bg-card { background-color: #111111; border: 1px solid #1f2937; transition: all 0.4s ease; }
+        .bg-card:hover { transform: translateY(-5px); border-color: #a855f7; box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3); }
+        .text-purple { color: #a855f7; }
+        .btn-purple { background: linear-gradient(45deg, #a855f7, #6d28d9); transition: transform 0.2s; }
+        .btn-purple:hover { transform: scale(1.05); }
+        .typing { overflow: hidden; border-right: .15em solid #a855f7; white-space: nowrap; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #a855f7 } }
+        .marquee { white-space: nowrap; overflow: hidden; display: inline-block; animation: marquee 10s linear infinite; }
+        @keyframes marquee { 0% { transform: translate(100%, 0); } 100% { transform: translate(-100%, 0); } }
+        .hidden-lang { display: none; }
+        .circle-container { border: 2px solid #a855f7; padding: 20px; border-radius: 50%; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; margin: 0 auto; background: rgba(168, 85, 247, 0.1); }
     </style>
 </head>
-<body class="p-4 md:p-8 flex items-center justify-center min-h-screen">
-
-    <div class="max-w-3xl w-full glass-card p-6 md:p-12 rounded-3xl border border-neutral-800 shadow-2xl">
+<body class="p-6 md:p-12">
+    <header class="max-w-2xl mx-auto text-center py-10">
+        <div class="flex justify-end gap-2 text-xs text-gray-500 mb-4">
+            <span onclick="setLang('en')" class="cursor-pointer hover:text-white text-purple font-bold">EN</span> | 
+            <span onclick="setLang('am')" class="cursor-pointer hover:text-white">AM</span>
+        </div>
         
-        <div class="w-full h-56 bg-neutral-900 rounded-2xl mb-8 overflow-hidden border border-neutral-700 relative">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200&h=400" alt="Professional workspace" class="w-full h-full object-cover opacity-70">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 to-transparent"></div>
-            <div class="absolute bottom-4 left-6 flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-black/50 backdrop-blur-md border border-gold flex items-center justify-center">
-                    <span class="text-lg font-black text-gold">AK</span>
-                </div>
-            </div>
+        <div class="overflow-hidden mb-6">
+            <h2 class="text-purple uppercase tracking-widest marquee text-sm font-bold">WELCOME TO AK TECH - AI POWERED DEVELOPER & VIBE CODER</h2>
         </div>
 
-        <header class="text-left mb-10">
-            <h1 class="text-4xl font-extrabold text-gold tracking-tighter mb-2">Ak Tech</h1>
-            <p class="text-neutral-400 uppercase tracking-widest text-sm font-semibold">Vibe Coding Student | Electrical Expert | Trader</p>
-        </header>
+        <div class="circle-container mb-6">
+            <h1 class="text-2xl font-bold text-white">Ak Tech</h1>
+        </div>
+        
+        <p class="text-xl mt-3 text-gray-400 typing lang-en">AI-Powered Developer & Vibe Coder</p>
+        <p class="text-xl mt-3 text-gray-400 typing lang-am hidden-lang">የ AI ሶፍትዌር አበልጻጊ እና የ Vibe Coder</p>
+        
+        <div class="mt-6 text-gray-400 leading-relaxed lang-en">
+            I build intelligent systems and modern web applications by leveraging the power of AI and Vibe Coding. I am constantly evolving through code.
+        </div>
+        <div class="mt-6 text-gray-400 leading-relaxed lang-am hidden-lang">
+            AI እና የ Vibe Coding ስልቶችን በመጠቀም ብልህ የሆኑ ስርአቶችን እና ዘመናዊ መተግበሪያዎችን እገነባለሁ። በየቀኑ በቴክኖሎጂው አለም አዳዲስ ነገሮችን እየተማርኩ አድጋለሁ።
+        </div>
 
-        <section class="text-left mb-12">
-            <p class="text-neutral-300 leading-relaxed max-w-2xl">
-                Based in Addis Ababa, I bridge the gap between physical craftsmanship and digital innovation. My daily life involves professional electrical work, but my vision is set on the future: using <strong>Vibe Coding</strong> to build functional tools that solve real-world problems in Ethiopia.
+        <div class="mt-8 space-y-4">
+            <div class="space-x-4">
+                <a href="https://t.me/Ak_Trades_Official" target="_blank" class="btn-purple px-8 py-3 rounded-full font-semibold shadow-lg shadow-purple-900/20 inline-block">Telegram Channel</a>
+                <a href="mailto:akeberegnaweke@gmail.com" class="border border-gray-700 px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Email Me</a>
+            </div>
+            <div class="text-sm text-gray-500 pt-4">
+                Twitter: <a href="https://twitter.com/AkeEtn" target="_blank" class="text-purple hover:underline">@AkeEtn</a> | 
+                Telegram: <a href="https://t.me/Aki_GD" target="_blank" class="text-purple hover:underline">@Aki_GD</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-2xl mx-auto mt-16">
+        <h2 class="text-2xl font-bold mb-8 text-center lang-en">My Mission</h2>
+        <h2 class="text-2xl font-bold mb-8 text-center lang-am hidden-lang">የእኔ ዓላማ</h2>
+        <div class="bg-card p-8 rounded-3xl">
+            <h3 class="text-purple font-bold text-lg mb-2 lang-en">AI & Vibe Coding Mastery</h3>
+            <h3 class="text-purple font-bold text-lg mb-2 lang-am hidden-lang">AI እና የ Vibe Coding ብቃት</h3>
+            <p class="text-gray-400 leading-relaxed lang-en">
+                My mission is to master AI-driven development. I believe that integrating AI tools with Vibe Coding is the future of building efficient and beautiful software solutions.
             </p>
-            <p class="text-neutral-300 leading-relaxed max-w-2xl mt-4">
-                In the markets, I am a dedicated trader. Through my channel, I share deep insights into <strong>Trading Psychology</strong> and market discipline to help others grow. If you are interested in collaborating or following my journey, reach out to me below.
+            <p class="text-gray-400 leading-relaxed lang-am hidden-lang">
+                ዓላማዬ በ AI የታገዘ የሶፍትዌር ልማትን በከፍተኛ ደረጃ መቆጣጠር ነው። የ AI መሳሪያዎችን ከ Vibe Coding ጋር ማቀናጀት ለወደፊት ውጤታማ እና ማራኪ መተግበሪያዎችን ለመገንባት ቁልፍ እንደሆነ አምናለሁ።
             </p>
-        </section>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
-                <div class="text-gold text-xl mb-2">⚡</div>
-                <h3 class="font-bold text-white text-sm mb-1">Electrical</h3>
-                <p class="text-xs text-neutral-500">Commercial & Residential Systems.</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
-                <div class="text-gold text-xl mb-2">💻</div>
-                <h3 class="font-bold text-white text-sm mb-1">Vibe Coding</h3>
-                <p class="text-xs text-neutral-500">Problem-solving for Ethiopia.</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover-gold">
-                <div class="text-gold text-xl mb-2">📈</div>
-                <h3 class="font-bold text-white text-sm mb-1">Trading</h3>
-                <p class="text-xs text-neutral-500">Psychology & Discipline.</p>
-            </div>
         </div>
+    </section>
 
-        <div class="flex flex-col gap-3">
-            <p class="text-neutral-500 text-xs mb-2">Connect with me on my platforms:</p>
-            <a href="https://t.me/Ak_Trades_Official" class="w-full py-3 bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-black rounded-xl transition text-center font-bold">Join My Trading Channel</a>
-            <div class="grid grid-cols-3 gap-3 text-center">
-                <a href="https://t.me/Aki_GD" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Telegram</a>
-                <a href="https://x.com/AkeEtn" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Twitter</a>
-                <a href="mailto:akeberegnaweke@gmail.com" class="py-2 border border-neutral-700 hover:border-gold hover:text-gold rounded-xl transition text-xs">Email</a>
-            </div>
-        </div>
-
-        <footer class="text-center mt-12">
-            <p class="text-gold text-sm font-light italic">"Building the future, one line of code and one connection at a time."</p>
-        </footer>
-    </div>
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-en, .lang-am').forEach(el => el.classList.add('hidden-lang'));
+            document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden-lang'));
+        }
+    </script>
+    <footer class="max-w-2xl mx-auto mt-20 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Ak Tech Portfolio. Powered by AI & Vibe Coding.</p>
+    </footer>
 </body>
 </html>
