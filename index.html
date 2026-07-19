@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Animations */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
@@ -51,9 +50,7 @@
             animation: shimmer 3s linear infinite;
         }
 
-        .vibe-badge {
-            animation: pulse-glow 3s infinite;
-        }
+        .vibe-badge { animation: pulse-glow 3s infinite; }
 
         .glass-card {
             background: rgba(15, 15, 15, 0.7);
@@ -101,7 +98,6 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-amber-500/10">
         <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="font-black text-3xl tracking-tighter gold-shimmer uppercase">AK</div>
@@ -115,15 +111,23 @@
 
             <div class="flex items-center space-x-4">
                 <div class="flex bg-zinc-900 rounded-lg p-1 text-xs font-bold border border-amber-500/20">
-                    <button onclick="setLanguage('am')" id="lang-am" class="px-3 py-1.5 rounded-md lang-active transition-all">AM</button>
-                    <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1.5 rounded-md transition-all text-amber-400/60">EN</button>
+                    <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1.5 rounded-md lang-active transition-all">EN</button>
+                    <button onclick="setLanguage('am')" id="lang-am" class="px-3 py-1.5 rounded-md transition-all text-amber-400/60">AM</button>
                 </div>
-                <a href="https://t.me/Aki_GD" target="_blank" class="hidden sm:block px-5 py-2 bg-amber-500 text-black rounded-lg hover:bg-amber-400 transition-all text-sm font-black" data-i18n="cta_contact">አግኘኝ</a>
+                <!-- Updated Contact Button with links -->
+                <div class="relative group hidden sm:block">
+                    <button class="px-5 py-2 bg-amber-500 text-black rounded-lg hover:bg-amber-400 transition-all text-sm font-black" data-i18n="cta_contact">Contact</button>
+                    <div class="absolute right-0 top-full mt-2 w-48 bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+                        <a href="https://twitter.com/AkeEtn" target="_blank" class="block px-4 py-3 hover:bg-amber-500/10 text-amber-100 text-sm">Twitter</a>
+                        <a href="mailto:akeberegn@gmail.com" class="block px-4 py-3 hover:bg-amber-500/10 text-amber-100 text-sm">Gmail</a>
+                        <a href="https://t.me/Aki_GD" target="_blank" class="block px-4 py-3 hover:bg-amber-500/10 text-amber-100 text-sm">Telegram</a>
+                        <a href="https://github.com/akeberegn" target="_blank" class="block px-4 py-3 hover:bg-amber-500/10 text-amber-100 text-sm">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="visible relative pt-48 pb-32 px-4 overflow-hidden flex flex-col items-center text-center">
         <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] -z-10"></div>
         
@@ -145,7 +149,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-24">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
@@ -182,31 +185,63 @@
         </div>
     </section>
 
-    <!-- Skills Visualizer -->
     <section id="skills" class="py-24 bg-zinc-950/40">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-5xl font-black mb-6 text-white" data-i18n="skills_title">የክህሎት ዳሽቦርድ</h2>
             <p class="text-amber-100/60 mb-16 text-xl" data-i18n="skills_desc">በተለያዩ የሙያ ዘርፎች ያለኝን ብቃት በዚህ ግራፍ መመልከት ይችላሉ።</p>
-            
             <div class="chart-container glass-card p-10 rounded-[3rem] shadow-2xl">
                 <canvas id="skillsChart"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="work" class="py-24">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-20 gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
                 <div class="text-center md:text-left">
                     <h2 class="text-5xl font-black mb-4 text-white" data-i18n="work_title">የምሰራቸው ስራዎች</h2>
                     <p class="text-amber-100/60 text-xl" data-i18n="work_desc">በአሁኑ ሰዓት ትኩረት አድርጌ እየሰራሁባቸው ያሉ ዋና ዋና ፕሮጀክቶች።</p>
                 </div>
-                <div class="flex bg-zinc-900/50 p-2 rounded-2xl border border-amber-500/20 backdrop-blur-sm">
-                    <button onclick="filterProjects('all')" class="px-8 py-3 text-sm font-black rounded-xl bg-amber-500 text-black shadow-lg filter-btn" data-i18n="filter_all">ሁሉንም</button>
-                    <button onclick="filterProjects('coding')" class="px-8 py-3 text-sm font-black rounded-xl text-amber-100/40 hover:text-amber-400 transition-all filter-btn" data-i18n="filter_coding">ኮዲንግ</button>
-                    <button onclick="filterProjects('trading')" class="px-8 py-3 text-sm font-black rounded-xl text-amber-100/40 hover:text-amber-400 transition-all filter-btn" data-i18n="filter_trading">ትሬዲንግ</button>
-                </div>
+            </div>
+
+            <!-- New Featured Projects Table -->
+            <div class="glass-card p-6 md:p-8 rounded-[2rem] overflow-x-auto mb-20 border border-amber-500/20">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-amber-500/20 text-amber-500 font-black uppercase text-sm">
+                            <th class="py-4 px-2">Project</th>
+                            <th class="py-4 px-2">Description</th>
+                            <th class="py-4 px-2">Tech</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-amber-100/80">
+                        <tr class="border-b border-amber-500/10">
+                            <td class="py-4 px-2 font-bold">📱 Vibe Coding App</td>
+                            <td class="py-4 px-2">Android & iOS ላይ የሚሰራ ኮዲንግ ትምህርት አፕ። Interactive lessons + AI quiz</td>
+                            <td class="py-4 px-2 text-xs text-amber-500/80 font-bold">Android, iOS, AI</td>
+                        </tr>
+                        <tr class="border-b border-amber-500/10">
+                            <td class="py-4 px-2 font-bold">🌐 Vibe Portfolio Builder</td>
+                            <td class="py-4 px-2">Modern responsive website builder for Ethiopian developers</td>
+                            <td class="py-4 px-2 text-xs text-amber-500/80 font-bold">React, JS</td>
+                        </tr>
+                        <tr class="border-b border-amber-500/10">
+                            <td class="py-4 px-2 font-bold">🧠 AI Trading Mindset Assistant</td>
+                            <td class="py-4 px-2">Traders ለሚጠቀሙ AI chatbot። Psychology tips, journal & emotional control</td>
+                            <td class="py-4 px-2 text-xs text-amber-500/80 font-bold">Python, AI</td>
+                        </tr>
+                        <tr class="border-b border-amber-500/10">
+                            <td class="py-4 px-2 font-bold">📊 Ak Trades Dashboard</td>
+                            <td class="py-4 px-2">Trading journal + psychology tracker with daily insights</td>
+                            <td class="py-4 px-2 text-xs text-amber-500/80 font-bold">Web, Firebase</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 font-bold">📚 Vibe Coding Hub</td>
+                            <td class="py-4 px-2">Interactive tutorial platform for beginners (HTML, Web Design & more)</td>
+                            <td class="py-4 px-2 text-xs text-amber-500/80 font-bold">HTML, CSS, JS</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div id="project-grid" class="grid md:grid-cols-2 gap-12">
@@ -232,7 +267,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-24 border-t border-amber-500/10 bg-black">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h2 class="text-5xl font-black mb-10 gold-shimmer uppercase">I am Ak</h2>
@@ -251,70 +285,35 @@
     <script>
         const langData = {
             am: {
-                nav_home: "መነሻ",
-                nav_about: "ስለ እኔ",
-                nav_skills: "ክህሎቶች",
-                nav_work: "ስራዎች",
-                cta_contact: "አግኘኝ",
-                hero_greet: "እኔ",
-                hero_badge: "Vibe Coding & Trading",
-                hero_desc: '"Code with Vibe. Trade with Mind."',
-                hero_btn_work: "ፕሮጀክቶችን እይ",
-                hero_btn_tele: "Telegram",
-                about_title: "እኔ Ak ነኝ",
+                nav_home: "መነሻ", nav_about: "ስለ እኔ", nav_skills: "ክህሎቶች", nav_work: "ስራዎች", cta_contact: "አግኘኝ",
+                hero_greet: "እኔ", hero_badge: "Vibe Coding & Trading", hero_desc: '"Code with Vibe. Trade with Mind."',
+                hero_btn_work: "ፕሮጀክቶችን እይ", hero_btn_tele: "Telegram", about_title: "እኔ Ak ነኝ",
                 about_text: "ዋናው አላማዬ ቴክኖሎጂን በቀላል እና በሚያዝናና መንገድ (Vibe Coding) ማስተማር ነው። የሙሉ-ስቴኩ (Full-Stack) የዌብ እና የሞባይል አፕሊኬሽን ልማት ልምዴን ተጠቅሜ የሰዎችን ችግር የሚፈቱ ዲጂታል ውጤቶችን እገነባለሁ።",
                 about_quote: '"ትሬዲንግ ከቴክኒክ ትንታኔ በላይ የስነ-ልቦና ጨዋታ ነው። ለዛም ነው ትክክለኛውን የአስተሳሰብ ዘይቤ (Mindset) የማስተምረው።"',
-                stat_psych: "ስነ-ልቦና",
-                skills_title: "የክህሎት ዳሽቦርድ",
-                skills_desc: "በተለያዩ የሙያ ዘርፎች ያለኝን ብቃት በዚህ ግራፍ መመልከት ይችላሉ።",
-                work_title: "የምሰራቸው ስራዎች",
-                work_desc: "በአሁኑ ሰዓት ትኩረት አድርጌ እየሰራሁባቸው ያሉ ዋና ዋና ፕሮጀክቶች።",
-                filter_all: "ሁሉንም",
-                filter_coding: "ኮዲንግ",
-                filter_trading: "ትሬዲንግ",
-                proj1_title: "Vibe Coding Tutorials",
-                proj1_desc: "ለኢትዮጵያውያን ዲቨሎፐሮች የቀለለ እና ተግባራዊ የኮዲንግ ትምህርቶች ማዘጋጀት።",
-                proj2_title: "Trading Psychology",
-                proj2_desc: "በ Ak_Trades_Oficial ቻናል በኩል የትሬደሮችን አስተሳሰብ እና የገበያ ስነ-ልቦና ማሻሻል።",
-                tag_edu: "ትምህርት",
-                tag_mind: "አስተሳሰብ",
-                footer_desc: '"Code with Vibe. Trade with Mind." አብረን እንስራ።',
-                chart_labels: ['ፍሮንት-እንድ', 'ባክ-እንድ', 'ሞባይል', 'AI መሳሪያዎች', 'ትሬዲንግ ስነ-ልቦና', 'ዲዛይን']
+                stat_psych: "ስነ-ልቦና", skills_title: "የክህሎት ዳሽቦርድ", skills_desc: "በተለያዩ የሙያ ዘርፎች ያለኝን ብቃት በዚህ ግራፍ መመልከት ይችላሉ።",
+                work_title: "የምሰራቸው ስራዎች", work_desc: "በአሁኑ ሰዓት ትኩረት አድርጌ እየሰራሁባቸው ያሉ ዋና ዋና ፕሮጀክቶች።",
+                filter_all: "ሁሉንም", filter_coding: "ኮዲንግ", filter_trading: "ትሬዲንግ", proj1_title: "Vibe Coding Tutorials",
+                proj1_desc: "ለኢትዮጵያውያን ዲቨሎፐሮች የቀለለ እና ተግባራዊ የኮዲንግ ትምህርቶች ማዘጋጀት።", proj2_title: "Trading Psychology",
+                proj2_desc: "በ Ak_Trades_Oficial ቻናል በኩል የትሬደሮችን አስተሳሰብ እና የገበያ ስነ-ልቦና ማሻሻል።", tag_edu: "ትምህርት", tag_mind: "አስተሳሰብ",
+                footer_desc: '"Code with Vibe. Trade with Mind." አብረን እንስራ።', chart_labels: ['ፍሮንት-እንድ', 'ባክ-እንድ', 'ሞባይል', 'AI መሳሪያዎች', 'ትሬዲንግ ስነ-ልቦና', 'ዲዛይን']
             },
             en: {
-                nav_home: "Home",
-                nav_about: "About",
-                nav_skills: "Skills",
-                nav_work: "Work",
-                cta_contact: "Contact",
-                hero_greet: "I am",
-                hero_badge: "Vibe Coding & Trading",
-                hero_desc: '"Code with Vibe. Trade with Mind."',
-                hero_btn_work: "View Projects",
-                hero_btn_tele: "Telegram",
-                about_title: "I am Ak",
+                nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_work: "Work", cta_contact: "Contact",
+                hero_greet: "I am", hero_badge: "Vibe Coding & Trading", hero_desc: '"Code with Vibe. Trade with Mind."',
+                hero_btn_work: "View Projects", hero_btn_tele: "Telegram", about_title: "I am Ak",
                 about_text: "My mission is to teach technology through simplicity and fun (Vibe Coding). As a Full-Stack developer, I build digital products that solve human problems.",
                 about_quote: '"Trading is a mental game beyond technical analysis. That is why I focus on teaching the right mindset."',
-                stat_psych: "Psychology",
-                skills_title: "Skill Dashboard",
-                skills_desc: "Overview of my professional expertise across key domains.",
-                work_title: "Featured Projects",
-                work_desc: "Major projects I am currently developing and scaling.",
-                filter_all: "All",
-                filter_coding: "Coding",
-                filter_trading: "Trading",
-                proj1_title: "Vibe Coding Tutorials",
+                stat_psych: "Psychology", skills_title: "Skill Dashboard", skills_desc: "Overview of my professional expertise across key domains.",
+                work_title: "Featured Projects", work_desc: "Major projects I am currently developing and scaling.",
+                filter_all: "All", filter_coding: "Coding", filter_trading: "Trading", proj1_title: "Vibe Coding Tutorials",
                 proj1_desc: "Practical coding tutorials specifically designed for the Ethiopian developer community.",
-                proj2_title: "Trading Psychology",
-                proj2_desc: "Mastering market mindset and psychology through Ak_Trades_Oficial.",
-                tag_edu: "Education",
-                tag_mind: "Mindset",
-                footer_desc: '"Code with Vibe. Trade with Mind." Let\'s connect.',
+                proj2_title: "Trading Psychology", proj2_desc: "Mastering market mindset and psychology through Ak_Trades_Oficial.",
+                tag_edu: "Education", tag_mind: "Mindset", footer_desc: '"Code with Vibe. Trade with Mind." Let\'s connect.',
                 chart_labels: ['Frontend', 'Backend', 'Mobile', 'AI Tools', 'Trading Psych', 'Design']
             }
         };
 
-        let currentLang = 'am';
+        let currentLang = 'en';
         let skillsChart;
 
         function setLanguage(lang) {
@@ -338,25 +337,13 @@
                         label: 'Skill Level',
                         data: [95, 82, 88, 75, 94, 85],
                         backgroundColor: 'rgba(251, 191, 36, 0.2)',
-                        borderColor: '#fbbf24',
-                        borderWidth: 3,
-                        pointBackgroundColor: '#fbbf24',
-                        pointBorderColor: '#000',
-                        pointHoverRadius: 8
+                        borderColor: '#fbbf24', borderWidth: 3,
+                        pointBackgroundColor: '#fbbf24', pointBorderColor: '#000', pointHoverRadius: 8
                     }]
                 },
                 options: {
                     maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(251, 191, 36, 0.1)' },
-                            grid: { color: 'rgba(251, 191, 36, 0.1)' },
-                            pointLabels: { color: '#fbbf24', font: { size: 14, weight: 'bold' } },
-                            ticks: { display: false },
-                            suggestedMin: 0,
-                            suggestedMax: 100
-                        }
-                    },
+                    scales: { r: { angleLines: { color: 'rgba(251, 191, 36, 0.1)' }, grid: { color: 'rgba(251, 191, 36, 0.1)' }, pointLabels: { color: '#fbbf24', font: { size: 14, weight: 'bold' } }, ticks: { display: false }, suggestedMin: 0, suggestedMax: 100 } },
                     plugins: { legend: { display: false } }
                 }
             });
@@ -372,45 +359,39 @@
         function filterProjects(type) {
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
-            
             buttons.forEach(btn => {
                 const key = btn.getAttribute('data-i18n');
                 const btnType = key === 'filter_all' ? 'all' : key.split('_')[1];
-                if (btnType === type) {
-                    btn.classList.add('bg-amber-500', 'text-black');
-                    btn.classList.remove('text-amber-100/40');
-                } else {
-                    btn.classList.remove('bg-amber-500', 'text-black');
-                    btn.classList.add('text-amber-100/40');
-                }
+                btn.classList.toggle('bg-amber-500', btnType === type);
+                btn.classList.toggle('text-black', btnType === type);
+                btn.classList.toggle('text-amber-100/40', btnType !== type);
             });
-
             cards.forEach(card => {
                 if (type === 'all' || card.getAttribute('data-type') === type) {
                     card.style.display = 'block';
-                    card.style.opacity = '0';
-                    setTimeout(() => card.style.opacity = '1', 10);
+                    card.style.opacity = '1';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
 
-        // Scroll Observer for Animations
-        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
 
         window.onload = () => {
             initChart();
-            setLanguage('am');
+            setLanguage('en');
             document.querySelectorAll('section').forEach(section => observer.observe(section));
         };
     </script>
 </body>
 </html>
+     
+
+
+      
+ 
+
+
